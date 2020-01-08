@@ -37,7 +37,7 @@ const Home = () => {
 
     return (
         <Layout
-            title="Trung tâm laptop The One"
+            title="Bách Khoa Computer"
             description="Nơi mua sắm đáng tin cậy, bạn của mọi nhà"
             className="container"
         >

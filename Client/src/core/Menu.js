@@ -41,9 +41,7 @@ const Menu = ({ history }) => (
                     to="/cart"
                 >
                     Giỏ hàng{" "}
-                    <sup>
-                        <small className="cart-badge">{itemTotal()}</small>
-                    </sup>
+                    <small className="cart-badge">{itemTotal()}</small>
                 </Link>
             </li>
 
