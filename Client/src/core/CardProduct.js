@@ -4,7 +4,7 @@ import ShowImage from './ShowImage';
 import moment from 'moment';
 import { addItem, updateItem, removeItem } from './cartHelpers';
 
-const Card = ({
+const CardProduct = ({
   product,
   showViewProductButton = true,
   showAddToCartButton = true,
@@ -21,7 +21,7 @@ const Card = ({
     return (
       showViewProductButton && (
         <Link to={`/product/${product._id}`} className="mr-2 d-flex justify-content-center" style={{textDecorationLine:'none'}}>
-          <button className="btn btn-outline-success mt-2 mb-2 card-btn-1" style={{width:200}}>Chi tiết sản phẩm</button>
+          <button className="btn btn-outline-secondary mt-2 mb-2 card-btn-1" style={{width:200}}>Chi tiết sản phẩm</button>
         </Link>
       )
     );
@@ -95,15 +95,22 @@ const Card = ({
     );
   };
   return (
-    <div className="card show ">
-      <h5 className="card-header card-header-1 d-flex justify-content-center d-flex align-items-center text-center">{product.name}</h5>
-      <div className="card-body">
+    <div className="row mt-5">
+      <div className="col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center align-items-center">
         {shouldRedirect(redirect)}
         <ShowImage item={product} url="product"/>
-        <p className="card-p nameproduct  mt-2">{product.description.substring(0, 30)} </p>
-        <p className="card-p black-10">Giá: {product.price} VND</p>
+      </div>
+      <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+        <h2>{product.name}</h2>
+        <p className="card-p  mt-2">{product.description.substring(0, 100)} </p>
+        <p className="card-p black-10"><span className="titledetail">Giá:</span> {product.price} VND</p>
+        <p className="black-9"><span className="titledetail">Loại sản phẩm:</span> {product.category && product.category.name}</p>
+        <p className="black-8"><span className="titledetail">Cập nhật:</span> {moment(product.createdAt).fromNow()}</p>
+        <p className="text-justify"><span className="titledetail">Mô tả:</span> Laptops with the right balance of business features and outstanding support for small business. Our most secure and manageable commercial laptops, delivering reliable productivity for your end-users. High performing and customizable workstations designed, tested and certified with professional applications</p>
+        {showStock(product.quantity)}
+        <br />
 
-        {showViewButton(showViewProductButton)}
+        {/* {showViewButton(showViewProductButton)} */}
 
         {showAddToCartBtn(showAddToCartButton)}
 
@@ -115,4 +122,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default CardProduct;

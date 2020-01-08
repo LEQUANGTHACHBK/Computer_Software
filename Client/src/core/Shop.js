@@ -97,13 +97,13 @@ const Shop = () => {
 
     return (
         <Layout
-            title="Sản phẩm"
-            description="Trung tâm laptop The One"
-            className="container-fluid"
+            title="BÁCH KHOA COMPUTER"
+            description="Nơi mua sắm đáng tin cậy, bạn của mọi nhà"
+            className="container"
         >
             <div className="row">
-                <div className="col-4">
-                    <h4>Lọc theo thương hiệu</h4>
+                <div className="col-lg-3 d-none d-lg-block">
+                    <h4>THƯƠNG HIỆU</h4>
                     <ul>
                         <Checkbox
                             categories={categories}
@@ -113,7 +113,7 @@ const Shop = () => {
                         />
                     </ul>
 
-                    <h4>Lọc theo giá sản phẩm</h4>
+                    <h4 className="mt-5">GIÁ SẢN PHẨM</h4>
                     <div>
                         <RadioBox
                             prices={prices}
@@ -124,11 +124,10 @@ const Shop = () => {
                     </div>
                 </div>
 
-                <div className="col-8">
-                    <h2 className="mb-4">Sản phẩm</h2>
+                <div className="col-lg-9 col-md-12 col-sm-12 col-12">
                     <div className="row">
                         {filteredResults.map((product, i) => (
-                            <div key={i} className="col-4 mb-3">
+                            <div key={i} className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3 ">
                                 <Card product={product} />
                             </div>
                         ))}

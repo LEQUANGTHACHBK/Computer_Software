@@ -42,8 +42,8 @@ const Cart = () => {
     return (
         <Layout
             title="Giỏ hàng"
-            description="Trung tâm laptop The One."
-            className="container-fluid"
+            description="Bách Khoa Computer - Nơi mua sắm đáng tin cậy, bạn của mọi nhà"
+            className="container"
         >
             <div className="row">
                 <div className="col-6">{items.length > 0 ? showItems(items) : noItemsMessage()}</div>

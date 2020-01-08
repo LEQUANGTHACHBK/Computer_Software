@@ -6,13 +6,19 @@ body{
 }
 .nav-link{
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.3em;
+    display: block;
     line-height: 2em;
+}
+.nav-link:hover{
+    border: none;
+
 }
 .btn,
 .jumbotron,
 .nav :hover {
     border-radius: 0px;
+    
 }
 
 /* cart badge */
@@ -60,7 +66,7 @@ body{
  */
 
 .product-img {
-    min-height: 100px;
+    height: 200px;
 }
 
 .jumbotron h2 {
@@ -121,4 +127,19 @@ body{
     100% {
         background-position: 0% 50%;
     }
+}
+
+.card h5{
+    font-weight: 600;
+    min-height: 80px;
+}
+.nameproduct{
+    font-weight: bolder;
+    min-height: 45px;
+}
+div h4{
+    font-weight: 600;
+}
+.titledetail{
+    font-weight: 700;
 }

@@ -37,7 +37,7 @@ const Home = () => {
 
     return (
         <Layout
-            title="Bách Khoa Computer"
+            title="BÁCH KHOA COMPUTER"
             description="Nơi mua sắm đáng tin cậy, bạn của mọi nhà"
             className="container"
         >
@@ -45,7 +45,7 @@ const Home = () => {
             <h2 className="mb-4">Sản phẩm mới</h2>
             <div className="row">
                 {productsByArrival.map((product, i) => (
-                    <div key={i} className="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
+                    <div key={i} className="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
                         <Card product={product} />
                     </div>
                 ))}
@@ -54,7 +54,7 @@ const Home = () => {
             <h2 className="mb-4">Bán chạy nhất</h2>
             <div className="row">
                 {productsBySell.map((product, i) => (
-                    <div key={i} className="col-4 mb-3">
+                    <div key={i} className="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
                         <Card product={product} />
                     </div>
                 ))}

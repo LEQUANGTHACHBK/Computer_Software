@@ -63,7 +63,7 @@ const Search = () => {
     const searchedProducts = (results = []) => {
         return (
             <div>
-                <h2 className="mt-4 mb-4">
+                <h2 className="mt-4 mb-1">
                     {searchMessage(searched, results)}
                 </h2>
 
@@ -84,12 +84,12 @@ const Search = () => {
                 <div className="input-group input-group-lg">
                     <div className="input-group-prepend">
                         <select
-                            className="btn mr-2"
+                            className="btn mr-2 pt-2"
                             onChange={handleChange("category")}
                         >
                             <option value="All">Tất cả</option>
                             {categories.map((c, i) => (
-                                <option key={i} value={c._id}>
+                                <option key={i} value={c._id}  >
                                     {c.name}
                                 </option>
                             ))}

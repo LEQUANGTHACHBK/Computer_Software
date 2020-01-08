@@ -5,8 +5,8 @@ import { signin, authenticate, isAuthenticated } from "../auth";
 
 const Signin = () => {
     const [values, setValues] = useState({
-        email: "ryan@gmail.com",
-        password: "rrrrrr9",
+        email: "bachkhoacomputer_user@gmail.com",
+        password: "123456",
         error: "",
         loading: false,
         redirectToReferrer: false
@@ -95,8 +95,8 @@ const Signin = () => {
     return (
         <Layout
             title="Đăng nhập"
-            description="Trung tâm laptop The One"
-            className="container col-md-8 offset-md-2"
+            description="Bách Khoa Computer - Nơi mua sắm đáng tin cậy, bạn của mọi nhà"
+            className="container col-lg-5 col-md-6 col-sm-8 col-12"
         >
             {showLoading()}
             {showError()}

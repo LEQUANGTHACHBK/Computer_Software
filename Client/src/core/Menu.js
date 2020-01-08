@@ -40,8 +40,7 @@ const Menu = ({ history }) => (
                     style={isActive(history, "/cart")}
                     to="/cart"
                 >
-                    Giỏ hàng{" "}
-                    <small className="cart-badge">{itemTotal()}</small>
+                    Giỏ hàng{" "}<span className="cart-badge">{itemTotal()}</span>
                 </Link>
             </li>
 

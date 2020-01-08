@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout';
 import { read, listRelated } from './apiCore';
-import Card from './Card';
+import CardProduct from './CardProduct';
 
 const Product = props => {
     const [product, setProduct] = useState({});
@@ -35,18 +35,18 @@ const Product = props => {
         <Layout
             title={product && product.name}
             description={product && product.description && product.description.substring(0, 100)}
-            className="container-fluid"
+            className="container"
         >
             <div className="row">
-                <div className="col-8">
-                    {product && product.description && <Card product={product} showViewProductButton={false} />}
+                <div className="col-12">
+                    {product && product.description && <CardProduct product={product} showViewProductButton={false} />}
                 </div>
 
-                <div className="col-4">
+                <div className="col-12 mt-5">
                     <h4>Related products</h4>
                     {relatedProduct.map((p, i) => (
                         <div className="mb-3" key={i}>
-                            <Card product={p} />
+                            <CardProduct product={p} />
                         </div>
                     ))}
                 </div>
