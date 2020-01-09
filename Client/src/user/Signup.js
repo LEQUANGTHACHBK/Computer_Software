@@ -7,12 +7,13 @@ const Signup = () => {
     const [values, setValues] = useState({
         name: 'bachkhoacomputer_user',
         email: 'bachkhoacomputer_user@hcmut.edu.vn',
-        password: 'password',
+        password: 'Password',
+        confirmPassword: 'Password',
         error: '',
         success: false
     });
 
-    const { name, email, password, success, error } = values;
+    const { name, email, password, confirmPassword, success, error } = values;
 
     const handleChange = name => event => {
         setValues({ ...values, error: false, [name]: event.target.value });
@@ -21,20 +22,28 @@ const Signup = () => {
     const clickSubmit = event => {
         event.preventDefault();
         setValues({ ...values, error: false });
-        signup({ name, email, password }).then(data => {
-            if (data.error) {
-                setValues({ ...values, error: data.error, success: false });
-            } else {
-                setValues({
-                    ...values,
-                    name: '',
-                    email: '',
-                    password: '',
-                    error: '',
-                    success: true
-                });
-            }
-        });
+        if (password != confirmPassword){
+          const notMatch = "Password Không Trùng Nhau. Vui Lòng Nhập Lại";
+          setValues({...values, error: notMatch});
+        }
+        else{
+          setValues({ ...values, error: false });
+          signup({ name, email, password }).then(data => {
+              if (data.error) {
+                  setValues({ ...values, error: data.error, success: false });
+              } else {
+                  setValues({
+                      ...values,
+                      name: '',
+                      email: '',
+                      password: '',
+                      confirmPasswordpassword: '',
+                      error: '',
+                      success: true
+                  });
+              }
+          });
+      }
     };
 
     const signUpForm = () => (
@@ -53,6 +62,12 @@ const Signup = () => {
                 <label className="text-muted">Password</label>
                 <input onChange={handleChange('password')} type="password" className="form-control" placeholder={password} />
             </div>
+
+            <div className="form-group">
+                <label className="text-muted">Confirm Password</label>
+                <input onChange={handleChange('confirmPassword')} type="password" className="form-control" placeholder={confirmPassword} />
+            </div>
+
             <button onClick={clickSubmit} className="btn btn-primary">
                 Submit
             </button>

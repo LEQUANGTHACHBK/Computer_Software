@@ -12,103 +12,103 @@ const isActive = (history, path) => {
 };
 
 const Menu = ({ history }) => (
-    <div>
-        <ul className="nav nav-tabs bg-primary">
-            <li className="nav-item">
-                <Link
-                    className="nav-link"
-                    style={isActive(history, "/")}
-                    to="/"
-                >
-                    Trang chủ
-                </Link>
-            </li>
-
-            <li className="nav-item">
-                <Link
-                    className="nav-link"
-                    style={isActive(history, "/shop")}
-                    to="/shop"
-                >
-                    Mua hàng
-                </Link>
-            </li>
-
-            <li className="nav-item">
-                <Link
-                    className="nav-link"
-                    style={isActive(history, "/cart")}
-                    to="/cart"
-                >
-                    Giỏ hàng{" "}<span className="cart-badge">{itemTotal()}</span>
-                </Link>
-            </li>
-
-            {isAuthenticated() && isAuthenticated().user.role === 0 && (
+        <div className=" navbar-collapse" >
+            <ul className="nav nav-tabs bg-primary" >
                 <li className="nav-item">
                     <Link
                         className="nav-link"
-                        style={isActive(history, "/user/dashboard")}
-                        to="/user/dashboard"
+                        style={isActive(history, "/")}
+                        to="/"
                     >
-                        Dashboard
+                        Trang chủ
                     </Link>
                 </li>
-            )}
 
-            {isAuthenticated() && isAuthenticated().user.role === 1 && (
                 <li className="nav-item">
                     <Link
                         className="nav-link"
-                        style={isActive(history, "/admin/dashboard")}
-                        to="/admin/dashboard"
+                        style={isActive(history, "/shop")}
+                        to="/shop"
                     >
-                        Dashboard
+                        Mua hàng
                     </Link>
                 </li>
-            )}
 
-            {!isAuthenticated() && (
-                <Fragment>
-                    <li className="nav-item">
-                        <Link
-                            className="nav-link"
-                            style={isActive(history, "/signin")}
-                            to="/signin"
-                        >
-                            Đăng nhập
-                        </Link>
-                    </li>
-
-                    <li className="nav-item">
-                        <Link
-                            className="nav-link"
-                            style={isActive(history, "/signup")}
-                            to="/signup"
-                        >
-                            Đăng ký
-                        </Link>
-                    </li>
-                </Fragment>
-            )}
-
-            {isAuthenticated() && (
                 <li className="nav-item">
-                    <span
+                    <Link
                         className="nav-link"
-                        style={{ cursor: "pointer", color: "#ffffff" }}
-                        onClick={() =>
-                            signout(() => {
-                                history.push("/");
-                            })
-                        }
+                        style={isActive(history, "/cart")}
+                        to="/cart"
                     >
-                        Đăng xuất
-                    </span>
+                        Giỏ hàng{" "}<span className="cart-badge">{itemTotal()}</span>
+                    </Link>
                 </li>
-            )}
-        </ul>
-    </div>
+
+                {isAuthenticated() && isAuthenticated().user.role === 0 && (
+                    <li className="nav-item">
+                        <Link
+                            className="nav-link"
+                            style={isActive(history, "/user/dashboard")}
+                            to="/user/dashboard"
+                        >
+                            Dashboard
+                        </Link>
+                    </li>
+                )}
+
+                {isAuthenticated() && isAuthenticated().user.role === 1 && (
+                    <li className="nav-item">
+                        <Link
+                            className="nav-link"
+                            style={isActive(history, "/admin/dashboard")}
+                            to="/admin/dashboard"
+                        >
+                            Dashboard
+                        </Link>
+                    </li>
+                )}
+
+                {!isAuthenticated() && (
+                    <Fragment>
+                        <li className="nav-item">
+                            <Link
+                                className="nav-link"
+                                style={isActive(history, "/signin")}
+                                to="/signin"
+                            >
+                                Đăng nhập
+                            </Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link
+                                className="nav-link"
+                                style={isActive(history, "/signup")}
+                                to="/signup"
+                            >
+                                Đăng ký
+                            </Link>
+                        </li>
+                    </Fragment>
+                )}
+
+                {isAuthenticated() && (
+                    <li className="nav-item">
+                        <span
+                            className="nav-link"
+                            style={{ cursor: "pointer", color: "#ffffff" }}
+                            onClick={() =>
+                                signout(() => {
+                                    history.push("/");
+                                })
+                            }
+                        >
+                            Đăng xuất
+                        </span>
+                    </li>
+                )}
+            </ul>
+        </div>
 );
 
 export default withRouter(Menu);
