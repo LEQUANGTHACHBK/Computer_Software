@@ -168,7 +168,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
 
     return (
         <div>
-            <h2>Tổng cộng: ${numberWithComma(getTotal())}</h2>
+            <h2>Tổng cộng: {numberWithComma(getTotal())} VNĐ</h2>
             {showLoading(data.loading)}
             {showSuccess(data.success)}
             {showError(data.error)}
