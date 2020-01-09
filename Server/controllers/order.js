@@ -4,35 +4,6 @@ const { errorHandler } = require('../helpers/dbErrorHandler');
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey('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');
 
-exports.create = (req, res) => {
-    console.log('CREATE ORDER: ', req.body);
-    req.body.order.user = req.profile;
-    const order = new Order(req.body.order);
-    order.save((error, data) => {
-        if (error) {
-            return res.status(400).json({
-                error: errorHandler(error)
-            });
-        }
-        // send email alert to admin
-        // order.address
-        // order.products.length
-        // order.amount
-        const emailData = {
-            to: 'hoangnguyen.ie12@gmail.com',
-            from: 'noreply@ecommerce.com',
-            subject: `A new order is received`,
-            html: `
-            <p>Customer name:</p>
-            <p>Total products: ${order.products.length}</p>
-            <p>Total cost: ${order.amount}</p>
-            <p>Login to dashboard to the order in detail.</p>
-        `
-        };
-        sgMail.send(emailData);
-        res.json(data);
-    });
-};
 exports.orderById = (req, res, next, id) => {
     Order.findById(id)
         .populate('products.product', 'name price')
@@ -62,7 +33,7 @@ exports.create = (req, res) => {
         // order.products.length
         // order.amount
         const emailData = {
-            to: 'kaloraat@gmail.com',
+            to: 'hoangnguyen.ie12@gmail.com',
             from: 'noreply@ecommerce.com',
             subject: `A new order is received`,
             html: `
