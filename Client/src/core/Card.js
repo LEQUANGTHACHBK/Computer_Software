@@ -3,6 +3,8 @@ import { Link, Redirect } from 'react-router-dom';
 import ShowImage from './ShowImage';
 import moment from 'moment';
 import { addItem, updateItem, removeItem } from './cartHelpers';
+import {numberWithComma} from "./apiCore";
+import {numberWithoutCommas} from "./apiCore";
 
 const Card = ({
   product,
@@ -89,7 +91,7 @@ const Card = ({
           }}
           className="btn btn-outline-danger mt-2 mb-2"
         >
-          Xóa sản phẩm
+          Xóa khỏi giỏ hàng
         </button>
       )
     );
@@ -101,7 +103,7 @@ const Card = ({
         {shouldRedirect(redirect)}
         <ShowImage item={product} url="product"/>
         <p className="card-p nameproduct  mt-2">{product.description.substring(0, 35)}... </p>
-        <p className="card-p black-10">Giá: {product.price} VND</p>
+        <p className="card-p black-10">Giá: {numberWithComma(product.price)} VND</p>
 
         {showViewButton(showViewProductButton)}
 

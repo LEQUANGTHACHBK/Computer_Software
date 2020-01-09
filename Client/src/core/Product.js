@@ -43,7 +43,7 @@ const Product = props => {
                 </div>
 
                 <div className="col-12 mt-5">
-                    <h4>Related products</h4>
+                    <h4>Sản phẩm liên quan</h4>
                     {relatedProduct.map((p, i) => (
                         <div className="mb-3" key={i}>
                             <CardProduct product={p} />

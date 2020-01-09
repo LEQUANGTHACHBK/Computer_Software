@@ -1,8 +1,14 @@
 import { API } from "../config";
 import queryString from "query-string";
-
+export const numberWithoutCommas = (x) => {
+    return x.replace(/\,/g,"");
+}
+export const numberWithComma = (x) =>  {
+    x = Math.round((x * 100) / 100);
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
 export const getProducts = sortBy => {
-    return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
+    return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=8`, {
         method: "GET"
     })
         .then(response => {

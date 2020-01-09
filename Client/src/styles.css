@@ -2,18 +2,18 @@
  * border radius
  */
 body{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: sans-serif;
 }
-.nav-link{
-    font-weight: 700;
-    font-size: 1.3em;
-    display: block;
-    line-height: 2em;
-}
-.nav-link:hover{
-    border: none;
+/*.nav-link{*/
+/*    font-weight: 700;*/
+/*    font-size: 1.3em;*/
+/*    display: block;*/
+/*    line-height: 2em;*/
+/*}*/
+/*.nav-link:hover{*/
+/*    border: none;*/
 
-}
+/*}*/
 .btn,
 .jumbotron,
 .nav :hover {

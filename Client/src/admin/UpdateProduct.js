@@ -3,6 +3,8 @@ import Layout from '../core/Layout';
 import { isAuthenticated } from '../auth';
 import { Link, Redirect } from 'react-router-dom';
 import { getProduct, getCategories, updateProduct } from './apiAdmin';
+import {numberWithComma} from "../core/apiCore";
+import {numberWithoutCommas} from "../core/apiCore";
 
 const UpdateProduct = ({ match }) => {
     const [values, setValues] = useState({
@@ -126,13 +128,13 @@ const UpdateProduct = ({ match }) => {
 
             <div className="form-group">
                 <label className="text-muted">Giá</label>
-                <input onChange={handleChange('price')} type="number" className="form-control" value={price} />
+                <input onChange={handleChange('price')} type="number" className="form-control" value={numberWithComma(price)} />
             </div>
 
             <div className="form-group">
                 <label className="text-muted">Loại sản phẩm</label>
                 <select onChange={handleChange('category')} className="form-control">
-                    <option>Please select</option>
+                    <option>Vui lòng chọn</option>
                     {categories &&
                         categories.map((c, i) => (
                             <option key={i} value={c._id}>

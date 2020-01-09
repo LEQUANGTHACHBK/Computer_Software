@@ -63,7 +63,9 @@ const ManageProducts = () => {
                                 </div>
                                 <div className="col-lg-3  col-3 d-flex justify-content-center">
                                     <button
-                                        onClick={() => destroy(p._id)}
+                                        onClick={() => {
+                                            if (window.confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) destroy(p._id)
+                                        }}
                                         className="btn btn-danger"
                                     >
                                         Xóa
