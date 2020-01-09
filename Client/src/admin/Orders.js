@@ -94,8 +94,8 @@ const Orders = () => {
     return (
         <Layout
             title="Đơn hàng"
-            description={`Trung tâm laptop The One`}
-            className="container-fluid"
+            description="Bách Khoa Computer - Nơi mua sắm đáng tin cậy, bạn của mọi nhà"
+            className="container"
         >
             <div className="row">
                 <div className="col-md-8 offset-md-2">

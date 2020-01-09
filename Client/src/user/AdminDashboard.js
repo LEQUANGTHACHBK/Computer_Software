@@ -56,12 +56,12 @@ const AdminDashboard = () => {
     return (
         <Layout
             title="Dashboard"
-            description={`G'day ${name}!`}
-            className="container-fluid"
+            description={`Xin Chào ${name} !`}
+            className="container"
         >
             <div className="row">
-                <div className="col-3">{adminLinks()}</div>
-                <div className="col-9">{adminInfo()}</div>
+                <div className="col-lg-4 col-sm-6 col-md-6 col-6">{adminLinks()}</div>
+                <div className="col-lg-8 col-sm-6 col-md-6 col-6">{adminInfo()}</div>
             </div>
         </Layout>
     );

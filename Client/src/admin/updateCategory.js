@@ -117,7 +117,7 @@ const UpdateCategory = ({ match }) => {
         <Layout
             title={`Hi ${user.name}`}
             description={`This is Update Product Action Page`}
-            className="container-fluid"
+            className="container"
         >
             <div className="row">
                 <div className="col-md-8 offset-md-2 m-b-250 mb-5">

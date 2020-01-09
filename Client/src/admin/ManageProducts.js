@@ -36,8 +36,8 @@ const ManageProducts = () => {
     return (
         <Layout
             title="Quản lý sản phẩm"
-            description="Trung tâm laptop The One"
-            className="container-fluid"
+            description="Bách Khoa Computer - Nơi mua sắm đáng tin cậy, bạn của mọi nhà"
+            className="container"
         >
             <div className="row">
                 <div className="col-12">
@@ -49,20 +49,27 @@ const ManageProducts = () => {
                         {products.map((p, i) => (
                             <li
                                 key={i}
-                                className="list-group-item d-flex justify-content-between align-items-center"
+                                className="row list-group-item d-flex justify-content-between align-items-center"
                             >
-                                <strong>{p.name}</strong>
-                                <Link to={`/admin/product/update/${p._id}`}>
-                                    <span className="badge badge-warning badge-pill">
-                                        Cập nhật
-                                    </span>
-                                </Link>
-                                <span
-                                    onClick={() => destroy(p._id)}
-                                    className="badge badge-danger badge-pill"
-                                >
-                                    Xóa
-                                </span>
+                                <div className="col-lg-6 col-6">
+                                    <strong>{p.name}</strong>
+                                </div>
+                                <div className="col-lg-3 col-3 d-flex justify-content-center">
+                                    <Link to={`/admin/product/update/${p._id}`}>
+                                        <button className="btn btn-warning">
+                                            Cập nhật
+                                        </button>
+                                    </Link>
+                                </div>
+                                <div className="col-lg-3  col-3 d-flex justify-content-center">
+                                    <button
+                                        onClick={() => destroy(p._id)}
+                                        className="btn btn-danger"
+                                    >
+                                        Xóa
+                                    </button>
+                                </div>
+                                
                             </li>
                         ))}
                     </ul>

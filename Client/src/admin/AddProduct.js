@@ -159,7 +159,7 @@ const AddProduct = () => {
         );
 
     return (
-        <Layout title="Thêm sản phẩm mới" description={`Trung tâm laptop The One`}>
+        <Layout title="Thêm sản phẩm mới" description="Bách Khoa Computer - Nơi mua sắm đáng tin cậy, bạn của mọi nhà">
             <div className="row">
                 <div className="col-md-8 offset-md-2">
                     {showLoading()}

@@ -188,7 +188,7 @@ const UpdateProduct = ({ match }) => {
     };
 
     return (
-        <Layout title="Cập nhật sản phẩm" description={`Trung tâm laptop The One`}>
+        <Layout title="Cập nhật sản phẩm" description="Bách Khoa Computer - Nơi mua sắm đáng tin cậy, bạn của mọi nhà">
             <div className="row">
                 <div className="col-md-8 offset-md-2">
                     {showLoading()}

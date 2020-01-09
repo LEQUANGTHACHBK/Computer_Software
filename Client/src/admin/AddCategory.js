@@ -72,7 +72,7 @@ const AddCategory = () => {
     return (
         <Layout
             title="Thêm loại sản phẩm mới"
-            description={`Trung tâm laptop The One`}
+            description="Bách Khoa Computer - Nơi mua sắm đáng tin cậy, bạn của mọi nhà"
         >
             <div className="row">
                 <div className="col-md-8 offset-md-2">
