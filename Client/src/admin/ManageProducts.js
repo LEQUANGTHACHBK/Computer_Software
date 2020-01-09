@@ -3,6 +3,7 @@ import Layout from "../core/Layout";
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import { getProducts, deleteProduct } from "./apiAdmin";
+import{numberWithComma} from "../core/apiCore";
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
