@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from "./Menu";
+import Footer from "./Footer";
 import "../styles.css";
 
 const Layout = ({
@@ -15,6 +16,8 @@ const Layout = ({
             <p className="lead">{description}</p>
         </div>
         <div className={className}>{children}</div>
+        <hr></hr>
+        <Footer></Footer>
     </div>
 );
 
