@@ -82,7 +82,7 @@ const Profile = ({ match }) => {
     );
 
     return (
-        <Layout title="Profile" description="Update your profile" className="container-fluid">
+        <Layout title="Hồ sơ" description="Cập nhật hồ sơ của bạn" className="container-fluid">
             <h2 className="mb-4">Cập nhật</h2>
             {profileUpdate(name, email, password)}
             {redirectUser(success)}
