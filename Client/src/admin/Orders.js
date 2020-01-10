@@ -130,7 +130,7 @@ const Orders = () => {
                                     </li>
                                     <li className="list-group-item">
                                         Được đặt vào:{" "}
-                                        {moment(o.createdAt).fromNow()}
+                                        {moment(o.createdAt).format("DD/MM/YYYY")}
                                     </li>
                                     <li className="list-group-item">
                                         Địa chỉ vận chuyển: {o.address}
