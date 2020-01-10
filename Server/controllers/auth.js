@@ -48,7 +48,7 @@ exports.signin = (req, res) => {
     User.findOne({ email }, (err, user) => {
         if (err || !user) {
             return res.status(400).json({
-                error: 'Email đã tồn tại.'
+                error: 'Email không tồn tại.'
             });
         }
         // if user is found make sure the email and password match

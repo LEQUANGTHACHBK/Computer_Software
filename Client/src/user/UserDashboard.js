@@ -73,6 +73,7 @@ const Dashboard = () => {
                             return (
                                 <div>
                                     <hr />
+                                    {h.status}
                                     {h.products.map((p, i) => {
                                         return (
                                             <div key={i}>
@@ -84,7 +85,7 @@ const Dashboard = () => {
                                                     Ngày mua:{" "}
                                                     {moment(
                                                         p.createdAt
-                                                    ).fromNow()}
+                                                    ).format("DD/MM/YYYY")}
                                                 </h6>
                                             </div>
                                         );
