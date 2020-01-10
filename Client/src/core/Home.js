@@ -43,18 +43,18 @@ const Home = () => {
         >
             <Search />
             <h2 className="mb-4">Sản phẩm mới</h2>
-            <div className="row">
+            <div className="row d-flex justify-content-center">
                 {productsByArrival.map((product, i) => (
-                    <div key={i} className="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <div key={i} className="col-lg-3 col-md-4 col-sm-6 col-8 mb-3 ">
                         <Card product={product} />
                     </div>
                 ))}
             </div>
 
             <h2 className="mb-4">Bán chạy nhất</h2>
-            <div className="row">
+            <div className="row d-flex justify-content-center">
                 {productsBySell.map((product, i) => (
-                    <div key={i} className="col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
+                    <div key={i} className="col-lg-3 col-md-4 col-sm-6 col-8 mb-3">
                         <Card product={product} />
                     </div>
                 ))}

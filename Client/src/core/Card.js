@@ -82,15 +82,18 @@ const Card = ({
   const showRemoveButton = showRemoveProductButton => {
     return (
       showRemoveProductButton && (
-        <button
-          onClick={() => {
+        <div  className="mr-2 d-flex justify-content-center">
+          <button 
+            onClick={() => {
             removeItem(product._id);
             setRun(!run); // run useEffect in parent Cart
-          }}
-          className="btn btn-outline-danger mt-2 mb-2"
-        >
-          Xóa sản phẩm
-        </button>
+            }}
+            className="btn btn-outline-danger mt-2 mb-2 card-btn-1  " style={{width:200}}
+          >
+            Xóa sản phẩm
+          </button>
+        </div>
+        
       )
     );
   };
