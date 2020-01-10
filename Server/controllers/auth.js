@@ -11,7 +11,7 @@ exports.signup = (req, res) => {
         if (err) {
             return res.status(400).json({
                 // error: errorHandler(err)
-                error: 'Email is taken'
+                error: 'Email đã tồn tại'
             });
         }
         user.salt = undefined;
@@ -48,14 +48,14 @@ exports.signin = (req, res) => {
     User.findOne({ email }, (err, user) => {
         if (err || !user) {
             return res.status(400).json({
-                error: 'User with that email does not exist. Please signup'
+                error: 'Email đã tồn tại.'
             });
         }
         // if user is found make sure the email and password match
         // create authenticate method in user model
         if (!user.authenticate(password)) {
             return res.status(401).json({
-                error: 'Email and password dont match'
+                error: 'Email và mật khẩu không khớp.'
             });
         }
         // generate a signed token with user id and secret
@@ -70,7 +70,7 @@ exports.signin = (req, res) => {
 
 exports.signout = (req, res) => {
     res.clearCookie('t');
-    res.json({ message: 'Signout success' });
+    res.json({ message: 'Đăng xuát thành công' });
 };
 
 exports.requireSignin = expressJwt({
@@ -82,7 +82,7 @@ exports.isAuth = (req, res, next) => {
     let user = req.profile && req.auth && req.profile._id == req.auth._id;
     if (!user) {
         return res.status(403).json({
-            error: 'Access denied'
+            error: 'Bạn không đủ quyền để truy cập trang này.'
         });
     }
     next();
@@ -91,7 +91,7 @@ exports.isAuth = (req, res, next) => {
 exports.isAdmin = (req, res, next) => {
     if (req.profile.role === 0) {
         return res.status(403).json({
-            error: 'Admin resourse! Access denied'
+            error: 'Bạn không đủ quyền để truy cập trang này'
         });
     }
     next();

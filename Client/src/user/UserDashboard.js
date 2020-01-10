@@ -4,6 +4,7 @@ import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import { getPurchaseHistory } from "./apiUser";
 import moment from "moment";
+import {numberWithComma} from "../core/apiCore";
 
 const Dashboard = () => {
     const [history, setHistory] = useState([]);
@@ -75,12 +76,12 @@ const Dashboard = () => {
                                     {h.products.map((p, i) => {
                                         return (
                                             <div key={i}>
-                                                <h6>Product name: {p.name}</h6>
+                                                <h6>Tên sản phẩm: {p.name}</h6>
                                                 <h6>
-                                                    Product price: ${p.price}
+                                                    Giá sản phẩm: {numberWithComma(p.price)} VNĐ
                                                 </h6>
                                                 <h6>
-                                                    Purchased date:{" "}
+                                                    Ngày mua:{" "}
                                                     {moment(
                                                         p.createdAt
                                                     ).fromNow()}

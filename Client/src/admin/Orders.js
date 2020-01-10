@@ -4,6 +4,7 @@ import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import { listOrders, getStatusValues, updateOrderStatus } from "./apiAdmin";
 import moment from "moment";
+import {numberWithComma} from "../core/apiCore";
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
@@ -76,7 +77,7 @@ const Orders = () => {
 
     const showStatus = o => (
         <div className="form-group">
-            <h3 className="mark mb-4">Status: {o.status}</h3>
+            <h3 className="mark mb-4">Trạng thái: {o.status}</h3>
             <select
                 className="form-control"
                 onChange={e => handleStatusChange(e, o._id)}
@@ -110,7 +111,7 @@ const Orders = () => {
                             >
                                 <h2 className="mb-5">
                                     <span className="bg-primary">
-                                        Order ID: {o._id}
+                                        Mã đơn hàng: {o._id}
                                     </span>
                                 </h2>
 
@@ -122,7 +123,7 @@ const Orders = () => {
                                         Mã đơn hàng: {o.transaction_id}
                                     </li>
                                     <li className="list-group-item">
-                                        Số lượng: ${o.amount}
+                                        Giá tiền: {numberWithComma(o.amount)} VNĐ
                                     </li>
                                     <li className="list-group-item">
                                         Được đặt bởi: {o.user.name}
@@ -150,10 +151,10 @@ const Orders = () => {
                                             border: "1px solid indigo"
                                         }}
                                     >
-                                        {showInput("Product name", p.name)}
-                                        {showInput("Product price", p.price)}
-                                        {showInput("Product total", p.count)}
-                                        {showInput("Product Id", p._id)}
+                                        {showInput("Tên sản phẩm", p.name)}
+                                        {showInput("Giá sản phẩm", numberWithComma(p.price) + " VNĐ")}
+                                        {showInput("Tổng số lượng", p.count)}
+                                        {showInput("Mã sản phẩm", p._id)}
                                     </div>
                                 ))}
                             </div>

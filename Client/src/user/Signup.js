@@ -49,7 +49,7 @@ const Signup = () => {
     const signUpForm = () => (
         <form>
             <div className="form-group">
-                <label className="text-muted">Name</label>
+                <label className="text-muted">Tên</label>
                 <input onChange={handleChange('name')} type="text" className="form-control" placeholder={name} />
             </div>
 
@@ -59,12 +59,12 @@ const Signup = () => {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Password</label>
+                <label className="text-muted">Mật khẩu</label>
                 <input onChange={handleChange('password')} type="password" className="form-control" placeholder={password} />
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Confirm Password</label>
+                <label className="text-muted">Nhập lại mật khẩu</label>
                 <input onChange={handleChange('confirmPassword')} type="password" className="form-control" placeholder={confirmPassword} />
             </div>
 

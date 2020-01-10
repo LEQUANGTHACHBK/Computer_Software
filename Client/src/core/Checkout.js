@@ -52,7 +52,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
             <div>{showDropIn()}</div>
         ) : (
             <Link to="/signin">
-                <button className="btn btn-primary">Sign in to checkout</button>
+                <button className="btn btn-primary">Đăng nhập để thanh toán</button>
             </Link>
         );
     };
@@ -137,10 +137,10 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
 
                     <DropIn
                         options={{
-                            authorization: data.clientToken,
-                            paypal: {
-                                flow: 'vault'
-                            }
+                            authorization: data.clientToken
+                            // paypal: {
+                            //     flow: 'vault'
+                            // }
                         }}
                         onInstance={instance => (data.instance = instance)}
                     />

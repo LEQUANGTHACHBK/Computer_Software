@@ -6,7 +6,7 @@ exports.categoryById = (req, res, next, id) => {
     Category.findById(id).exec((err, category) => {
         if (err || !category) {
             return res.status(400).json({
-                error: 'Category does not exist'
+                error: 'Loại sản phẩm không tồn tại'
             });
         }
         req.category = category;
@@ -51,7 +51,7 @@ exports.remove = (req, res) => {
     Product.find({ category }).exec((err, data) => {
         if (data.length >= 1) {
             return res.status(400).json({
-                message: `Sorry. You cant delete ${category.name}. It has ${data.length} associated products.`
+                message: `Bạn không thể xóa loại sản phẩm ${category.name} vì liên quan đến ${data.length} sản phẩm.`
             });
         } else {
             category.remove((err, data) => {
@@ -61,7 +61,7 @@ exports.remove = (req, res) => {
                     });
                 }
                 res.json({
-                    message: 'Category deleted'
+                    message: 'Loại sản phẩm đã xóa'
                 });
             });
         }

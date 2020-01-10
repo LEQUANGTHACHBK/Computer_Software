@@ -10,7 +10,7 @@ exports.productById = (req, res, next, id) => {
         .exec((err, product) => {
             if (err || !product) {
                 return res.status(400).json({
-                    error: 'Product not found'
+                    error: 'Không tìm thấy sản phẩm'
                 });
             }
             req.product = product;
@@ -29,7 +29,7 @@ exports.create = (req, res) => {
     form.parse(req, (err, fields, files) => {
         if (err) {
             return res.status(400).json({
-                error: 'Image could not be uploaded'
+                error: 'Hình ảnh không thể được tải lên'
             });
         }
         // check for all fields
@@ -37,7 +37,7 @@ exports.create = (req, res) => {
 
         if (!name || !description || !price || !category || !quantity || !shipping) {
             return res.status(400).json({
-                error: 'All fields are required'
+                error: 'Vui lòng điền tất cả thông tin'
             });
         }
 
@@ -50,7 +50,7 @@ exports.create = (req, res) => {
             // console.log("FILES PHOTO: ", files.photo);
             if (files.photo.size > 1000000) {
                 return res.status(400).json({
-                    error: 'Image should be less than 1mb in size'
+                    error: 'Hình ảnh phải dưới 1MB'
                 });
             }
             product.photo.data = fs.readFileSync(files.photo.path);
@@ -78,7 +78,7 @@ exports.remove = (req, res) => {
             });
         }
         res.json({
-            message: 'Product deleted successfully'
+            message: 'Sản phẩm đã được xóa thành công'
         });
     });
 };
@@ -89,7 +89,7 @@ exports.update = (req, res) => {
     form.parse(req, (err, fields, files) => {
         if (err) {
             return res.status(400).json({
-                error: 'Image could not be uploaded'
+                error: 'Không thể tải ảnh lên'
             });
         }
 
@@ -103,7 +103,7 @@ exports.update = (req, res) => {
             // console.log("FILES PHOTO: ", files.photo);
             if (files.photo.size > 1000000) {
                 return res.status(400).json({
-                    error: 'Image should be less than 1mb in size'
+                    error: 'Hình ảnh phải dưới 1MB'
                 });
             }
             product.photo.data = fs.readFileSync(files.photo.path);
@@ -141,7 +141,7 @@ exports.list = (req, res) => {
         .exec((err, products) => {
             if (err) {
                 return res.status(400).json({
-                    error: 'Products not found'
+                    error: 'Không tìm thấy sản phẩm'
                 });
             }
             res.json(products);

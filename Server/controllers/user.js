@@ -6,7 +6,7 @@ exports.userById = (req, res, next, id) => {
     User.findById(id).exec((err, user) => {
         if (err || !user) {
             return res.status(400).json({
-                error: 'User not found'
+                error: 'Người dùng không tồn tại'
             });
         }
         req.profile = user;
@@ -42,12 +42,12 @@ exports.update = (req, res) => {
     User.findOne({ _id: req.profile._id }, (err, user) => {
         if (err || !user) {
             return res.status(400).json({
-                error: 'User not found'
+                error: 'Người dùng không tồn tại'
             });
         }
         if (!name) {
             return res.status(400).json({
-                error: 'Name is required'
+                error: 'Vui lòng nhập tên'
             });
         } else {
             user.name = name;
@@ -56,7 +56,7 @@ exports.update = (req, res) => {
         if (password) {
             if (password.length < 6) {
                 return res.status(400).json({
-                    error: 'Password should be min 6 characters long'
+                    error: 'Mật khẩu phải ít nhất 6 ký tự'
                 });
             } else {
                 user.password = password;
@@ -95,7 +95,7 @@ exports.addOrderToUserHistory = (req, res, next) => {
     User.findOneAndUpdate({ _id: req.profile._id }, { $push: { history: history } }, { new: true }, (error, data) => {
         if (error) {
             return res.status(400).json({
-                error: 'Could not update user purchase history'
+                error: 'Không thể cập nhật lịch sử giao dịch'
             });
         }
         next();
