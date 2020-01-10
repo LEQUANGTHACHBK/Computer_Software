@@ -121,12 +121,7 @@ exports.update = (req, res) => {
     });
 };
 
-/**
- * sell / arrival
- * by sell = /products?sortBy=sold&order=desc&limit=4
- * by arrival = /products?sortBy=createdAt&order=desc&limit=4
- * if no params are sent, then all products are returned
- */
+
 
 exports.list = (req, res) => {
     let order = req.query.order ? req.query.order : 'asc';
@@ -148,10 +143,7 @@ exports.list = (req, res) => {
         });
 };
 
-/**
- * it will find the products based on the req product category
- * other products that has the same category, will be returned
- */
+
 
 exports.listRelated = (req, res) => {
     let limit = req.query.limit ? parseInt(req.query.limit) : 6;
@@ -180,13 +172,7 @@ exports.listCategories = (req, res) => {
     });
 };
 
-/**
- * list products by search
- * we will implement product search in react frontend
- * we will show categories in checkbox and price range in radio buttons
- * as the user clicks on those checkbox and radio buttons
- * we will make api request and show the products to users based on what he wants
- */
+
 
 exports.listBySearch = (req, res) => {
     let order = req.body.order ? req.body.order : 'desc';
