@@ -14,22 +14,22 @@ const AdminDashboard = () => {
                 <h4 className="card-header">Admin</h4>
                 <ul className="list-group">
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/create/category">
+                        <Link className="nav-link text-primary" to="/create/category">
                             Thêm loại sản phẩm
                         </Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/create/product">
+                        <Link className="nav-link text-primary" to="/create/product">
                             Thêm sản phẩm
                         </Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/admin/orders">
+                        <Link className="nav-link text-primary" to="/admin/orders">
                             Xem đơn hàng
                         </Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/admin/products">
+                        <Link className="nav-link text-primary" to="/admin/products">
                             Quản lý sản phẩm
                         </Link>
                     </li>

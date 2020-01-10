@@ -33,12 +33,12 @@ const Dashboard = () => {
                 <h4 className="card-header">Người dùng</h4>
                 <ul className="list-group">
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/cart">
+                        <Link className="nav-link text-primary" to="/cart">
                             Giỏ hàng
                         </Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link" to={`/profile/${_id}`}>
+                        <Link className="nav-link text-primary" to={`/profile/${_id}`}>
                             Cập nhật hồ sơ
                         </Link>
                     </li>
@@ -100,7 +100,7 @@ const Dashboard = () => {
     return (
         <Layout
             title="Dashboard"
-            description={`G'day ${name}!`}
+            description={`Xin chào ${name}!`}
             className="container-fluid"
         >
             <div className="row">

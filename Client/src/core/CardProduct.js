@@ -3,6 +3,8 @@ import { Link, Redirect } from 'react-router-dom';
 import ShowImage from './ShowImage';
 import moment from 'moment';
 import { addItem, updateItem, removeItem } from './cartHelpers';
+import {numberWithComma} from "./apiCore";
+import {numberWithoutCommas} from "./apiCore";
 
 const CardProduct = ({
   product,
@@ -103,7 +105,7 @@ const CardProduct = ({
       <div className="col-lg-6 col-md-6 col-sm-12 col-12">
         <h2>{product.name}</h2>
         <p className="card-p  mt-2">{product.description.substring(0, 100)} </p>
-        <p className="card-p black-10"><span className="titledetail">Giá:</span> {product.price} VND</p>
+        <p className="card-p black-10"><span className="titledetail">Giá:</span> {numberWithComma(product.price)} VND</p>
         <p className="black-9"><span className="titledetail">Loại sản phẩm:</span> {product.category && product.category.name}</p>
         <p className="black-8"><span className="titledetail">Cập nhật:</span> {moment(product.createdAt).fromNow()}</p>
         <p className="text-justify"><span className="titledetail">Mô tả:</span> Laptops with the right balance of business features and outstanding support for small business. Our most secure and manageable commercial laptops, delivering reliable productivity for your end-users. High performing and customizable workstations designed, tested and certified with professional applications</p>

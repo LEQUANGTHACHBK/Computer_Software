@@ -12,7 +12,7 @@ const Shop = () => {
     });
     const [categories, setCategories] = useState([]);
     const [error, setError] = useState(false);
-    const [limit, setLimit] = useState(6);
+    const [limit, setLimit] = useState(12);
     const [skip, setSkip] = useState(0);
     const [size, setSize] = useState(0);
     const [filteredResults, setFilteredResults] = useState([]);
@@ -59,7 +59,7 @@ const Shop = () => {
             size > 0 &&
             size >= limit && (
                 <button onClick={loadMore} className="btn btn-warning mb-5">
-                    Load more
+                    Thêm nữa
                 </button>
             )
         );
